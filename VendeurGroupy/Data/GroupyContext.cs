@@ -9,17 +9,17 @@ namespace VendeurGroupy.Data
 {
     class GroupyContext : DbContext
     {
-    DbSet<Categories> Categories { get; set; }
-    DbSet<NoteInternes> NoteInternes { get; set; }
-    DbSet<Preventes> Preventes { get; set; }
-    DbSet<Signalements> Signalements { get; set; }
-    DbSet<Clients> Clients { get; set; }
-    DbSet<Produits> Produits { get; set; }
-    DbSet<Vendeurs> Vendeurs { get; set; }
-    DbSet<MouvementStocks> MouvementStocks { get; set; }
-    DbSet<Expeditions> Expeditions { get; set; }
-    DbSet<Categories> Categorie { get; set; }
-    DbSet<Stocks> Stocks { get; set; }
+        DbSet<Categories> Categories { get; set; }
+        DbSet<NoteInternes> NoteInternes { get; set; }
+        DbSet<Preventes> Preventes { get; set; }
+        DbSet<Signalements> Signalements { get; set; }
+        DbSet<Clients> Clients { get; set; }
+        DbSet<Produits> Produits { get; set; }
+        DbSet<Vendeurs> Vendeurs { get; set; }
+        DbSet<MouvementStocks> MouvementStocks { get; set; }
+        DbSet<Expeditions> Expeditions { get; set; }
+        DbSet<Categories> Categorie { get; set; }
+        DbSet<Stocks> Stocks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,17 +46,8 @@ namespace VendeurGroupy.Data
                     );
 
                 // Activer les logs SQL pour le debug (optionnel)
-                //optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+                optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }
