@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendeurGroupy.Models
 {
-    class facture
+    class Facture
     {
     }
 }
