@@ -30,10 +30,10 @@ namespace VendeurGroupy
      
         public void CallConnexion(object sender , RoutedEventArgs e)
         {
-            vm.test();
-            Trace.WriteLine("appel de la connexion");
-           // vm.Connexion();
-           
+            //vm.test();
+            ////Trace.WriteLine("appel de la connexion");
+            vm.Connexion();
+
         }
     }
 }
