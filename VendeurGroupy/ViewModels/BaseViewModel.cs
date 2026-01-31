@@ -31,7 +31,7 @@ namespace VendeurGroupy.ViewModels
         }
         public void test()
         {
-            Console.WriteLine("in test");
+            Trace.WriteLine("in test");
         }
     }
 }
