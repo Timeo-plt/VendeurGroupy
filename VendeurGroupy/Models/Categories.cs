@@ -11,10 +11,10 @@ namespace VendeurGroupy.Models
     class Categories
     {
         [Column("id_categorie")]
-        public int id_categorie { get; set; }
+        public int Id_categorie { get; set; }
 
         [Column("id_gestionnaire")]
-        public string id_gestionnaire { get; set; }
+        public int Id_gestionnaire { get; set; }
 
         [Column("lib")]
         public string lib { get; set; }
@@ -26,7 +26,7 @@ namespace VendeurGroupy.Models
         public DateTime UpdatedAt { get; set; }
 
         [ForeignKey("id_gestionnaire")]
-        public virtual gestionnaire id_gestionnaire { get; set; }
+        public virtual Gestionnaire Id_gestionnaire { get; set; }
 
     }
 }

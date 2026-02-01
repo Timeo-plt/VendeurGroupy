@@ -48,6 +48,6 @@ namespace VendeurGroupy.Models
         public DateTime updated_at { get; set; }
         
         [ForeignKey("id_prevente")]
-        public virtual Preventes id_prevente { get; set; }
+        public virtual Preventes Id_prevente { get; set; }
     }
 }
