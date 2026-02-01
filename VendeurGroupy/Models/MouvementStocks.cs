@@ -45,10 +45,10 @@ namespace VendeurGroupy.Models
         public DateTime updated_at { get; set; }
 
         [ForeignKey("id_produit")]
-        public virtual Produit id_produit { get; set; }
+        public virtual Produits Id_produit { get; set; }
 
         [ForeignKey("id_vendeur")]
-        public virtual Vendeur id_vendeur { get; set; }
+        public virtual Vendeurs Id_vendeur { get; set; }
 
     }
 }
