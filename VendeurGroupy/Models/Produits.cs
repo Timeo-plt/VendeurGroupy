@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendeurGroupy.Models
 {
     [Table("produit")]
+    [PrimaryKey("Id_produit")]
+
     class Produits
     {
         [Column("id_produit")]
-        public int id_produit { get; set; }
+        public int Id_produit { get; set; }
 
         [Column("id_categorie")]
-        public int id_categorie { get; set; }
+        public int Id_categorie { get; set; }
 
         [Column("description")]
         public string description {get; set;}
@@ -34,10 +37,10 @@ namespace VendeurGroupy.Models
         public DateTime updated_at { get; set; }
 
         [ForeignKey("id_categorie")]
-        public virtual Categories Id_categorie { get; set; }
+        public virtual Categories Categories { get; set; }
 
         [ForeignKey("id_vendeur")]
-        public virtual Vendeurs Id_vendeur { get; set; }
+        public virtual Vendeurs Vendeurs { get; set; }
 
     }
 }

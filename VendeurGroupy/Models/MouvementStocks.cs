@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendeurGroupy.Models
 {
     [Table("mouvements_stocks")]
+    [PrimaryKey("Id_mouvementStock")]
     class MouvementStocks
     {
         [Column("id_mouvementStock")]
-        public int IdMouvementStock { get; set; }   
+        public int Id_mouvementStock { get; set; }
 
         [Column("id_produit")]
         public int id_produit { get; set; }

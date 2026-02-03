@@ -5,9 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 namespace VendeurGroupy.Models
 {
     [Table("categories")]
+    [PrimaryKey("Id_categorie")]
+
     class Categories
     {
         [Column("id_categorie")]
@@ -26,7 +29,7 @@ namespace VendeurGroupy.Models
         public DateTime UpdatedAt { get; set; }
 
         [ForeignKey("id_gestionnaire")]
-        public virtual Gestionnaire Id_gestionnaire { get; set; }
+        public virtual Gestionnaire Gestionnaire { get; set; }
 
     }
 }

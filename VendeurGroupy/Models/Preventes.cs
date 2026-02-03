@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendeurGroupy.Models
 {
     [Table("prevente")]
+    [PrimaryKey("Id_prevente")]
     class Preventes
     {
         [Column("id_prevente")]
-        public int id_prevente { get; set; }
+        public int Id_prevente { get; set; }
 
         [Column("date_limite")]
         public DateTime date_limite { get; set; }
