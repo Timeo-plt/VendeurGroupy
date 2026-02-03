@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendeurGroupy.Models
 {
     [Table("note_internes")]
+    [PrimaryKey("Id_noteInterne")]
 
     class NoteInternes
     {
         [Column("id_noteInterne")]
-        public int id_noteInterne { get; set; }
+        public int Id_noteInterne { get; set; }
 
         [Column("id_prevente")]
-        public int id_prevente { get; set; }
+        public int Id_prevente { get; set; }
 
         [Column("id_vendeur")]
-        public int id_vendeur { get; set; }
+        public int Id_vendeur { get; set; }
 
         [Column("contenu")]
         public string contenu { get; set; }
