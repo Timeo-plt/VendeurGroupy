@@ -20,6 +20,7 @@ namespace VendeurGroupy.Data
         DbSet<Expeditions> Expeditions { get; set; }
         DbSet<Categories> Categorie { get; set; }
         DbSet<Stocks> Stocks { get; set; }
+        public DbSet<Utilisateurs> Utilisateurs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

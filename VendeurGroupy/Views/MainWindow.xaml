@@ -5,12 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VendeurGroupy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Connexion" Height="450" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Se connecter" Name="btntest" Click="CallConnexion" Grid.ColumnSpan="2" Height="100" Width="300"/>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="300" Grid.ColumnSpan="2" Margin="129,124,0,0" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.089"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Label Content="Identifiant" RenderTransformOrigin="0.5,0.5" >
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.01"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox Name="Identifiant"/>
+            <Label Content="password" />
+            <PasswordBox Name="mot_de_passe" />
+            <Button Content="Se connecter" Name="btntest" Click="CallConnexion" Grid.ColumnSpan="2" Height="20" Width="100" />
+        </StackPanel>
+
+
     </Grid>
 </Window>
