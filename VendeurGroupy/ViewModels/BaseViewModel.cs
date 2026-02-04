@@ -4,29 +4,44 @@ using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using VendeurGroupy.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace VendeurGroupy.ViewModels
 {
     internal class BaseViewModel
     {
-        private readonly GroupyContext _context;
+        public readonly GroupyContext _context;
 
         public BaseViewModel()
         {
             _context = new GroupyContext();
         }
 
-        public async void Connexion()
+        public async void Connexion(MainWindow mainWindow)
         {
-            Console.WriteLine("in test");
             bool canConnect = await _context.Database.CanConnectAsync();
             if (canConnect)
             {
-                MessageBox.Show("bien joue!");
-            }
-            else
-            {
-                MessageBox.Show("echec de la connexion");
+                try
+                {
+                    var user = await _context.Utilisateurs.FirstOrDefaultAsync(u => u.email == mainWindow.Identifiant.Text && u.mot_de_passe == mainWindow.mot_de_passe.Password);
+                    if (user != null)
+                    {
+                        MessageBox.Show("connexion reussie");
+                        Dashboard dashboard = new Dashboard();
+                        dashboard.Show();
+                        mainWindow.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Identifiant ou mot de passe incorrect");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors de la connexion à la base de données : {ex.Message}");
+                    return;
+                }
             }
         }
         public void test()

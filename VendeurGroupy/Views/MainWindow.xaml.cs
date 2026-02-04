@@ -32,8 +32,9 @@ namespace VendeurGroupy
         {
             //vm.test();
             ////Trace.WriteLine("appel de la connexion");
-            vm.Connexion();
+            vm.Connexion(this);
 
         }
+
     }
 }
