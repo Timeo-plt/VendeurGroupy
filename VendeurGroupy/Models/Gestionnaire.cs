@@ -12,7 +12,7 @@ namespace VendeurGroupy.Models
     internal class Gestionnaire
     {
         [Column("id_gestionnaire")]
-        public int id_gestionnaire { get; set; }
+        public int Id_gestionnaire { get; set; }
 
     }
 }

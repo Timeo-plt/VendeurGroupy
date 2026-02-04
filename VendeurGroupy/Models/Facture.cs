@@ -12,7 +12,7 @@ namespace VendeurGroupy.Models
     class Facture
     {
         [Column("id_facture")]
-        public int id_facture { get; set; }
+        public int Id_facture { get; set; }
 
         [Column("date_facture")]
         public DateTime date_facture { get; set; }
