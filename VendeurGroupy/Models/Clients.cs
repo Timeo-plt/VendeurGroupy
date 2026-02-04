@@ -7,15 +7,15 @@ using System.Text;
 namespace VendeurGroupy.Models
 {
     [Table("clients")]
-    [PrimaryKey("Id_client")]
+    [PrimaryKey("Id_user")]
 
     class Clients
     {
-        [Column("id_client")]
-        public int id_client { get; set; }
+        [Column("id_user")]
+        public int Id_user { get; set; }
 
         [Column("nom")]
-        public string nom { get; set; }
+        public string Nom { get; set; }
 
         [Column("prenom")]
         public string prenom { get; set; }

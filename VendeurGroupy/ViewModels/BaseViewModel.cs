@@ -22,11 +22,11 @@ namespace VendeurGroupy.ViewModels
             bool canConnect = await _context.Database.CanConnectAsync();
             if (canConnect)
             {
-                Trace.WriteLine("Connexion réussie à la base de données.");
+                MessageBox.Show("bien joue!");
             }
             else
             {
-                Trace.WriteLine("Échec de la connexion à la base de données.");
+                MessageBox.Show("echec de la connexion");
             }
         }
         public void test()

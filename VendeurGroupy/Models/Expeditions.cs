@@ -12,14 +12,14 @@ namespace VendeurGroupy.Models
     class Expeditions
     {
         [Column("id_expedition")]
-        public int id_expedition { get; set; }
+        public int Id_expedition { get; set; }
 
         [Column("id_prevente")]
-        public int id_prevente { get; set; }
+        public int Id_prevente { get; set; }
 
         [Column("numero_tracking")]
-        public string numero_tracking { get; set; }
-            
+        public string Numero_tracking { get; set; }
+
         [Column("transporteur")]
         public string transporteur { get; set; }
 
@@ -51,6 +51,6 @@ namespace VendeurGroupy.Models
         public DateTime updated_at { get; set; }
         
         [ForeignKey("id_prevente")]
-        public virtual Preventes Id_prevente { get; set; }
+        public virtual Preventes Preventes { get; set; }
     }
 }
