@@ -22,10 +22,10 @@ namespace VendeurGroupy
         {
             InitializeComponent();
         }
-        public void Button_stock(object sender, RoutedEventArgs e)
-        {
-            MainContent.Content = new StockView();
-        }
+        //public void Button_stock(object sender, RoutedEventArgs e)
+        //{
+        //    MainContent.Content = new StockView();
+        //}
 
     }
 }
