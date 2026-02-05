@@ -9,22 +9,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using VendeurGroupy.Views.UserControls;
 
-namespace VendeurGroupy
+namespace VendeurGroupy.Views.UserControls
 {
     /// <summary>
-    /// Logique d'interaction pour Dashboard.xaml
+    /// Logique d'interaction pour StockView.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class StockView : Window
     {
-        public Dashboard()
+        public StockView()
         {
             InitializeComponent();
-        }
-        public void Button_stock(object sender, RoutedEventArgs e)
-        {
-            MainContent.Content = new StockView();
         }
 
     }
