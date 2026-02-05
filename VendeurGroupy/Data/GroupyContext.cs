@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using VendeurGroupy.Models;
-
 namespace VendeurGroupy.Data
 {
     class GroupyContext : DbContext
@@ -50,213 +49,213 @@ namespace VendeurGroupy.Data
                 optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
             }
         }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
-        //    // ================================================
-        //    // PRODUIT
-        //    // ================================================
+            // ================================================
+            // PRODUIT
+            // ================================================
 
-        //    modelBuilder.Entity<Produit>()
-        //        .HasOne(p => p.Vendeur)
-        //        .WithMany()
-        //        .HasForeignKey(p => p.IdVendeur)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Produits>()
+                .HasOne(p => p.Vendeurs)
+                .WithMany()
+                .HasForeignKey(p => p.id_vendeur)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<Produit>()
-        //        .HasOne(p => p.Categorie)
-        //        .WithMany()
-        //        .HasForeignKey(p => p.IdCategorie)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Produits>()
+                .HasOne(p => p.Categories)
+                .WithMany()
+                .HasForeignKey(p => p.Id_categorie)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // ================================================
-        //    // PREVENTE
-        //    // ================================================
+            // ================================================
+            // PREVENTE
+            // ================================================
 
-        //    modelBuilder.Entity<Prevente>()
-        //        .HasOne(p => p.Produit)
-        //        .WithMany()
-        //        .HasForeignKey(p => p.IdProduit)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Preventes>()
+                .HasOne(p => p.Produits)
+                .WithMany()
+                .HasForeignKey(p => p.id_produit)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<Prevente>()
-        //        .HasOne(p => p.Client)
-        //        .WithMany()
-        //        .HasForeignKey(p => p.IdClient)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Preventes>()
+                .HasOne(p => p.Clients)
+                .WithMany()
+                .HasForeignKey(p => p.id_client)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // Contrainte unique : un client ne peut pas commander 2 fois le même produit
-        //    modelBuilder.Entity<Prevente>()
-        //        .HasIndex(p => new { p.IdProduit, p.IdClient })
-        //        .IsUnique();
+            // Contrainte unique : un client ne peut pas commander 2 fois le même produit
+            modelBuilder.Entity<Preventes>()
+                .HasIndex(p => new { p.id_produit, p.id_client })
+                .IsUnique();
 
-        //    // ================================================
-        //    // STOCK
-        //    // ================================================
+            // ================================================
+            // STOCK
+            // ================================================
 
-        //    modelBuilder.Entity<Stock>()
-        //        .HasOne(s => s.Produit)
-        //        .WithMany()
-        //        .HasForeignKey(s => s.IdProduit)
-        //        .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Stocks>()
+                .HasOne(s => s.Produits)
+                .WithMany()
+                .HasForeignKey(s => s.Id_produit)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        //    // Un produit = un stock unique
-        //    modelBuilder.Entity<Stock>()
-        //        .HasIndex(s => s.IdProduit)
-        //        .IsUnique();
+            // Un produit = un stock unique
+            modelBuilder.Entity<Stocks>()
+                .HasIndex(s => s.Id_produit)
+                .IsUnique();
 
-        //    // ================================================
-        //    // MOUVEMENT STOCK
-        //    // ================================================
+            // ================================================
+            // MOUVEMENT STOCK
+            // ================================================
 
-        //    modelBuilder.Entity<MouvementStock>()
-        //        .HasOne(m => m.Produit)
-        //        .WithMany()
-        //        .HasForeignKey(m => m.IdProduit)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<MouvementStocks>()
+                .HasOne(m => m.Produits)
+                .WithMany()
+                .HasForeignKey(m => m.id_produit)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<MouvementStock>()
-        //        .HasOne(m => m.Vendeur)
-        //        .WithMany()
-        //        .HasForeignKey(m => m.IdVendeur)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<MouvementStocks>()
+                .HasOne(m => m.Vendeurs)
+                .WithMany()
+                .HasForeignKey(m => m.id_vendeur)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // ================================================
-        //    // EXPEDITION
-        //    // ================================================
+            // ================================================
+            // EXPEDITION
+            // ================================================
 
-        //    modelBuilder.Entity<Expedition>()
-        //        .HasOne(e => e.Prevente)
-        //        .WithMany()
-        //        .HasForeignKey(e => e.IdPrevente)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Expeditions>()
+                .HasOne(e => e.Preventes)
+                .WithMany()
+                .HasForeignKey(e => e.Id_prevente)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // Une prévente = une expédition unique
-        //    modelBuilder.Entity<Expedition>()
-        //        .HasIndex(e => e.IdPrevente)
-        //        .IsUnique();
+            // Une prévente = une expédition unique
+            modelBuilder.Entity<Expeditions>()
+                .HasIndex(e => e.Id_prevente)
+                .IsUnique();
 
-        //    // Numéro de tracking unique
-        //    modelBuilder.Entity<Expedition>()
-        //        .HasIndex(e => e.NumeroTracking)
-        //        .IsUnique();
+            // Numéro de tracking unique
+            modelBuilder.Entity<Expeditions>()
+                .HasIndex(e => e.Numero_tracking)
+                .IsUnique();
 
-        //    // ================================================
-        //    // NOTE INTERNE
-        //    // ================================================
+            // ================================================
+            // NOTE INTERNE
+            // ================================================
 
-        //    modelBuilder.Entity<NoteInterne>()
-        //        .HasOne(n => n.Prevente)
-        //        .WithMany()
-        //        .HasForeignKey(n => n.IdPrevente)
-        //        .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<NoteInternes>()
+                .HasOne(n => n.Preventes)
+                .WithMany()
+                .HasForeignKey(n => n.Id_prevente)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        //    modelBuilder.Entity<NoteInterne>()
-        //        .HasOne(n => n.Vendeur)
-        //        .WithMany()
-        //        .HasForeignKey(n => n.IdVendeur)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<NoteInternes>()
+                .HasOne(n => n.Vendeurs)
+                .WithMany()
+                .HasForeignKey(n => n.Id_vendeur)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // ================================================
-        //    // FACTURE
-        //    // ================================================
+            // ================================================
+            // FACTURE
+            // ================================================
 
-        //    modelBuilder.Entity<Facture>()
-        //        .HasOne(f => f.Prevente)
-        //        .WithMany()
-        //        .HasForeignKey(f => f.IdPrevente)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Facture>()
+                .HasOne(f => f.Preventes)
+                .WithMany()
+                .HasForeignKey(f => f.Preventes.Id_prevente)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .HasOne(f => f.Vendeur)
-        //        .WithMany()
-        //        .HasForeignKey(f => f.IdVendeur)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Facture>()
+                .HasOne(f => f.Vendeurs)
+                .WithMany()
+                .HasForeignKey(f => f.Vendeurs.Id_vendeur)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .HasOne(f => f.Client)
-        //        .WithMany()
-        //        .HasForeignKey(f => f.IdClient)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Facture>()
+                .HasOne(f => f.Clients)
+                .WithMany()
+                .HasForeignKey(f => f.Clients.Id_user)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .HasOne(f => f.Produit)
-        //        .WithMany()
-        //        .HasForeignKey(f => f.IdProduit)
-        //        .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Facture>()
+                .HasOne(f => f.Produits)
+                .WithMany()
+                .HasForeignKey(f => f.Produits.Id_produit)
+                .OnDelete(DeleteBehavior.Restrict);
 
-        //    // Une prévente = une facture unique
-        //    modelBuilder.Entity<Facture>()
-        //        .HasIndex(f => f.IdPrevente)
-        //        .IsUnique();
+            // Une prévente = une facture unique
+            modelBuilder.Entity<Facture>()
+                .HasIndex(f => f.Preventes.Id_prevente)
+                .IsUnique();
 
-        //    // Numéro de facture unique
-        //    modelBuilder.Entity<Facture>()
-        //        .HasIndex(f => f.NumeroFacture)
-        //        .IsUnique();
+            // Numéro de facture unique
+            modelBuilder.Entity<Facture>()
+                .HasIndex(f => f.Id_facture)
+                .IsUnique();
 
-        //    // ================================================
-        //    // SIGNALEMENT
-        //    // ================================================
+            // ================================================
+            // SIGNALEMENT
+            // ================================================
 
-        //    modelBuilder.Entity<Signalement>()
-        //        .HasOne(s => s.Produit)
-        //        .WithMany()
-        //        .HasForeignKey(s => s.IdProduit)
-        //        .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Signalements>()
+                .HasOne(s => s.Produits)
+                .WithMany()
+                .HasForeignKey(s => s.Id_produit)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        //    modelBuilder.Entity<Signalement>()
-        //        .HasOne(s => s.Client)
-        //        .WithMany()
-        //        .HasForeignKey(s => s.IdClient)
-        //        .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Signalements>()
+                .HasOne(s => s.Clients)
+                .WithMany()
+                .HasForeignKey(s => s.Clients.Id_user)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        //    // Un client ne peut signaler qu'une fois le même produit
-        //    modelBuilder.Entity<Signalement>()
-        //        .HasIndex(s => new { s.IdProduit, s.IdClient })
-        //        .IsUnique();
+            // Un client ne peut signaler qu'une fois le même produit
+            modelBuilder.Entity<Signalements>()
+                .HasIndex(s => new { s.Id_produit, s.Id_user })
+                .IsUnique();
 
-        //    // ================================================
-        //    // CONFIGURATION DES TYPES DECIMAUX
-        //    // ================================================
+            // ================================================
+            // CONFIGURATION DES TYPES DECIMAUX
+            // ================================================
 
-        //    // Produits - Prix
-        //    modelBuilder.Entity<Produit>()
-        //        .Property(p => p.PrixInitial)
-        //        .HasPrecision(10, 2);
+            // Produits - Prix
+            modelBuilder.Entity<Produits>()
+                .Property(p => p.prix_initial)
+                .HasPrecision(10, 2);
 
-        //    modelBuilder.Entity<Produit>()
-        //        .Property(p => p.PrixGroupe)
-        //        .HasPrecision(10, 2);
+            modelBuilder.Entity<Produits>()
+                .Property(p => p.prix_groupe)
+                .HasPrecision(10, 2);
 
-        //    // Stocks - Prix d'achat
-        //    modelBuilder.Entity<Stock>()
-        //        .Property(s => s.PrixAchat)
-        //        .HasPrecision(10, 2);
+            // Stocks - Prix d'achat
+            modelBuilder.Entity<Stocks>()
+                .Property(s => s.prix_achat)
+                .HasPrecision(10, 2);
 
-        //    // Expéditions - Poids
-        //    modelBuilder.Entity<Expedition>()
-        //        .Property(e => e.Poids)
-        //        .HasPrecision(8, 2);
+            // Expéditions - Poids
+            modelBuilder.Entity<Expeditions>()
+                .Property(e => e.poids)
+                .HasPrecision(8, 2);
 
-        //    // Factures - Montants
-        //    modelBuilder.Entity<Facture>()
-        //        .Property(f => f.PrixUnitaire)
-        //        .HasPrecision(10, 2);
+            // Factures - Montants
+            modelBuilder.Entity<Facture>()
+                .Property(f => f.Produits.prix_initial)
+                .HasPrecision(10, 2);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .Property(f => f.MontantHT)
-        //        .HasPrecision(10, 2);
+            modelBuilder.Entity<Facture>()
+                .Property(f => f.montantTTC)
+                .HasPrecision(10, 2);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .Property(f => f.TVA)
-        //        .HasPrecision(10, 2);
+            modelBuilder.Entity<Facture>()
+                .Property(f => f.TVA)
+                .HasPrecision(10, 2);
 
-        //    modelBuilder.Entity<Facture>()
-        //        .Property(f => f.MontantTTC)
-        //        .HasPrecision(10, 2);
-        //}
+            modelBuilder.Entity<Facture>()
+                .Property(f => f.montantTTC)
+                .HasPrecision(10, 2);
+        }
 
     }
 }

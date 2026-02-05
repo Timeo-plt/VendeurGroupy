@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VendeurGroupy"
         mc:Ignorable="d"
-<<<<<<< HEAD
-        Title="Dashboard" Height="550" Width="700" >
+        Title="Dashboard" Height="550" Width="700">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,7 +13,7 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" 
-         Background="LightGray">
+             Background="LightGray">
             <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
 
                 <Button Content="Gestion des Stocks" Margin="4" Click="Button_stock"/>
@@ -26,16 +25,11 @@
                 <Button Content="Liste produits" Margin="4" Click="Button_liste"/>
                 <Button Content="Liste preventes" Margin="4" Click="Button_prevente"/>
 
-
             </StackPanel>
         </Border>
         <Border Grid.Column="1" Padding="5" >
             <ContentControl x:Name="MainContent"/>
         </Border>
-=======
-        Title="Dashboard" Height="450" Width="800">
-    <Grid>
-        
->>>>>>> 75f97524d60ad8a0784d8ff6283e519a052577e0
     </Grid>
 </Window>
+

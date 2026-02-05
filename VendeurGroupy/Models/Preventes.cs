@@ -32,11 +32,20 @@ namespace VendeurGroupy.Models
         [Column("id_produit")]
         public int id_produit { get; set; }
 
+        [Column("id_client")]
+        public int id_client { get; set;}
+
         [Column("created_at")]
         public DateTime created_at { get; set; }
 
         [Column("updated_at")]
         public DateTime updated_at { get; set; }
+
+        [ForeignKey("id_produit")]
+        public virtual Produits Produits { get; set; }
+
+        [ForeignKey("id_client")]
+        public virtual Clients Clients { get; set; }
 
     }
 }

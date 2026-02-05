@@ -35,6 +35,12 @@ namespace VendeurGroupy.Models
         [Column("updated_at")]
         public DateTime updated_at { get; set; }
 
+        [ForeignKey("id_prevente")]
+        public virtual Preventes Preventes { get; set; }
+
+        [ForeignKey("id_vendeur")]
+        public virtual Vendeurs Vendeurs { get; set; }
+
 
 
 

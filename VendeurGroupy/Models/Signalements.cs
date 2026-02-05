@@ -25,5 +25,8 @@ namespace VendeurGroupy.Models
         [ForeignKey("Id_produit")]
         public virtual Produits Produits { get; set;}
 
+        [ForeignKey("Id_user")]
+        public virtual Clients Clients { get; set; }
+
     }
 }
