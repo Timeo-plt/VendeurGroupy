@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VendeurGroupy"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="Dashboard" Height="550" Width="700" >
 
     <Grid>
@@ -31,5 +32,10 @@
         <Border Grid.Column="1" Padding="5" >
             <ContentControl x:Name="MainContent"/>
         </Border>
+=======
+        Title="Dashboard" Height="450" Width="800">
+    <Grid>
+        
+>>>>>>> 75f97524d60ad8a0784d8ff6283e519a052577e0
     </Grid>
 </Window>

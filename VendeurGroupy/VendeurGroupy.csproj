@@ -21,6 +21,7 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\UserControls\" />
   </ItemGroup>
 
 </Project>
