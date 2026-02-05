@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:VendeurGroupy"
         mc:Ignorable="d"
         Title="Dashboard" Height="550" Width="700" >
-        
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"  />
@@ -14,9 +14,18 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" 
          Background="LightGray">
-            <StackPanel Grid.Column="0">
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+
                 <Button Content="Gestion des Stocks" Margin="4" Click="Button_stock"/>
-                <Button Content="Gestion des Expeditions" Margin="4" />
+                <Button Content="Gestion des Mouvements de stocks" Margin="4" Click="Button_mouvement"/>
+                <Button Content="Gestion des Expeditions" Margin="4" Click="Button_expedition"/>
+                <Button Content="Liste Client" Margin="4" Click="Button_client"/>
+                <Button Content="Messages" Margin="4" Click="Button_message"/>
+                <Button Content="Notes" Margin="4" Click="Button_notes"/>
+                <Button Content="Liste produits" Margin="4" Click="Button_liste"/>
+                <Button Content="Liste preventes" Margin="4" Click="Button_prevente"/>
+
+
             </StackPanel>
         </Border>
         <Border Grid.Column="1" Padding="5" >

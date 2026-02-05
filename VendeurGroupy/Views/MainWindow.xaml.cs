@@ -15,9 +15,6 @@ using VendeurGroupy.ViewModels;
 
 namespace VendeurGroupy
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         BaseViewModel vm; 
@@ -30,8 +27,6 @@ namespace VendeurGroupy
      
         public void CallConnexion(object sender , RoutedEventArgs e)
         {
-            //vm.test();
-            ////Trace.WriteLine("appel de la connexion");
             vm.Connexion(this);
 
         }

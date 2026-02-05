@@ -8,19 +8,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace VendeurGroupy.Views.UserControls
 {
     /// <summary>
-    /// Logique d'interaction pour StockView.xaml
+    /// Logique d'interaction pour Expeditions.xaml
     /// </summary>
-    public partial class StockView : UserControl
+    public partial class Expeditions : UserControl
     {
-        public StockView()
+        public Expeditions()
         {
             InitializeComponent();
         }
-
     }
 }

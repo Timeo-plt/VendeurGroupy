@@ -22,10 +22,49 @@ namespace VendeurGroupy
         {
             InitializeComponent();
         }
-        //public void Button_stock(object sender, RoutedEventArgs e)
-        //{
-        //    MainContent.Content = new StockView();
-        //}
+        public void Button_stock(object sender, RoutedEventArgs e)
+        {
+            
+            MainContent.Content = new StockView();
+        }
+        public void Button_mouvement(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new Mouvement();
+        }
+        public void Button_expedition(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new Expeditions();
+        }
+
+        public void Button_client(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new Liste_client();
+        }
+
+        public void Button_message(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new Messages();
+        }
+
+        public void Button_notes(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new ViewNotes();
+        }
+        public void Button_liste(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new ViewProduits();
+        }
+        public void Button_prevente(object sender, RoutedEventArgs e)
+        {
+
+            MainContent.Content = new ViewPrevente();
+        }
 
     }
 }
