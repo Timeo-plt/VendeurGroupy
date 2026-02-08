@@ -164,30 +164,30 @@ namespace VendeurGroupy.Data
             modelBuilder.Entity<Facture>()
                 .HasOne(f => f.Preventes)
                 .WithMany()
-                .HasForeignKey(f => f.Preventes.Id_prevente)
+                .HasForeignKey(f => f.Id_prevente)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Facture>()
                 .HasOne(f => f.Vendeurs)
                 .WithMany()
-                .HasForeignKey(f => f.Vendeurs.Id_vendeur)
+                .HasForeignKey(f => f.Id_vendeur)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Facture>()
                 .HasOne(f => f.Clients)
                 .WithMany()
-                .HasForeignKey(f => f.Clients.Id_user)
+                .HasForeignKey(f => f.Id_user)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Facture>()
                 .HasOne(f => f.Produits)
                 .WithMany()
-                .HasForeignKey(f => f.Produits.Id_produit)
+                .HasForeignKey(f => f.Id_produit)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Une prévente = une facture unique
             modelBuilder.Entity<Facture>()
-                .HasIndex(f => f.Preventes.Id_prevente)
+                .HasIndex(f => f.Id_prevente)
                 .IsUnique();
 
             // Numéro de facture unique
@@ -208,7 +208,7 @@ namespace VendeurGroupy.Data
             modelBuilder.Entity<Signalements>()
                 .HasOne(s => s.Clients)
                 .WithMany()
-                .HasForeignKey(s => s.Clients.Id_user)
+                .HasForeignKey(s => s.Id_user)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Un client ne peut signaler qu'une fois le même produit
@@ -241,7 +241,7 @@ namespace VendeurGroupy.Data
 
             // Factures - Montants
             modelBuilder.Entity<Facture>()
-                .Property(f => f.Produits.prix_initial)
+                .Property(f => f.prix_initial)
                 .HasPrecision(10, 2);
 
             modelBuilder.Entity<Facture>()

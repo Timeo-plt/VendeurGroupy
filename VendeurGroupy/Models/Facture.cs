@@ -32,13 +32,32 @@ namespace VendeurGroupy.Models
         [Column("updated_at")]
         public DateTime updated_at { get; set; }
 
+        [Column("id_prevente")]
+        public int Id_prevente { get; set; }
+
+        [Column("id_vendeur")]
+        public int Id_vendeur { get; set; }
+
+        [Column("id_user")]
+        public int Id_user { get; set; }
+
+        [Column("id_produit")]
+        public int Id_produit { get; set; }
+
+        [Column("prix_initial")]
+        public decimal prix_initial { get; set; }
+
+
+
+
         [ForeignKey("id_prevente")]
         public virtual Preventes Preventes { get; set; }
 
         [ForeignKey("id_vendeur")]
         public virtual Vendeurs Vendeurs { get; set; }
 
-        [ForeignKey("id_client")]
+
+        [ForeignKey("id_user")]
         public virtual Clients Clients { get; set; }
 
         [ForeignKey("id_produit")]
