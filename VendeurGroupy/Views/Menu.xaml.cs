@@ -16,11 +16,12 @@ namespace VendeurGroupy
     /// <summary>
     /// Logique d'interaction pour Dashboard.xaml
     /// </summary>
-    public partial class Dashboard : Window
+    public partial class Menu : Window
     {
-        public Dashboard()
+        public Menu()
         {
             InitializeComponent();
+            MainContent.Content = new Dashboard();
         }
         public void Button_stock(object sender, RoutedEventArgs e)
         {
@@ -65,5 +66,10 @@ namespace VendeurGroupy
 
             MainContent.Content = new ViewPrevente();
         }
-     }
- }      
+
+        public void Button_dashboard(object sender, RoutedEventArgs e)
+        {
+            MainContent.Content = new Dashboard();
+        }
+    }
+}

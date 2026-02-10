@@ -1,4 +1,4 @@
-﻿<Window x:Class="VendeurGroupy.Dashboard"
+﻿<Window x:Class="VendeurGroupy.Menu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -24,11 +24,15 @@
                 <Button Content="Notes" Margin="4" Click="Button_notes"/>
                 <Button Content="Liste produits" Margin="4" Click="Button_liste"/>
                 <Button Content="Liste preventes" Margin="4" Click="Button_prevente"/>
-
+                <Button Content="Dashboard" Margin="4" Click="Button_dashboard"/>
             </StackPanel>
         </Border>
+        
         <Border Grid.Column="1" Padding="5" >
-            <ContentControl x:Name="MainContent"/>
+            <StackPanel>
+                <ContentControl x:Name="MainContent" Height="MaxHeight" Width="MaxWidth"/>
+            </StackPanel>
+            
         </Border>
     </Grid>
 </Window>

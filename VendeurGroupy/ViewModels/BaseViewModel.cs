@@ -28,8 +28,8 @@ namespace VendeurGroupy.ViewModels
                     if (user != null)
                     {
                         MessageBox.Show("connexion reussie");
-                        Dashboard dashboard = new Dashboard();
-                        dashboard.Show();
+                        Menu menu = new Menu();
+                        menu.Show();
                         mainWindow.Close();
                     }
                     else
