@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows;
 using VendeurGroupy.Data;
 using Microsoft.EntityFrameworkCore;
+using VendeurGroupy.Views.UserControls;
+using System.Security.Cryptography.X509Certificates;
 
 namespace VendeurGroupy.ViewModels
 {
@@ -48,5 +50,6 @@ namespace VendeurGroupy.ViewModels
         {
             Trace.WriteLine("in test");
         }
+
     }
 }

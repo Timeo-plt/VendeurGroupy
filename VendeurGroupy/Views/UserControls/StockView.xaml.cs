@@ -17,9 +17,11 @@ namespace VendeurGroupy.Views.UserControls
     /// </summary>
     public partial class StockView : UserControl
     {
+        StockView  Vm;
         public StockView()
         {
             InitializeComponent();
+            Vm = new StockView();
         }
 
     }

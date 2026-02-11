@@ -29,10 +29,7 @@
         </Border>
         
         <Border Grid.Column="1" Padding="5" >
-            <StackPanel>
-                <ContentControl x:Name="MainContent" Height="MaxHeight" Width="MaxWidth"/>
-            </StackPanel>
-            
+            <ContentControl x:Name="MainContent" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         </Border>
     </Grid>
 </Window>

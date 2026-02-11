@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="Bisque">
     <Grid>
-        <TextBlock Text="les produits sont ici" />
+        <ListView>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id_produit}" />
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding description}" />
+                    <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding prix}" />
+                    <GridViewColumn Header="Prix" DisplayMemberBinding="{Binding image}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </UserControl>

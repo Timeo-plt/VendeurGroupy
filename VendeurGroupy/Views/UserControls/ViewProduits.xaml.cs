@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace VendeurGroupy.Views.UserControls
 {
-    /// <summary>
-    /// Logique d'interaction pour ViewProduits.xaml
-    /// </summary>
     public partial class ViewProduits : UserControl
     {
         public ViewProduits()
