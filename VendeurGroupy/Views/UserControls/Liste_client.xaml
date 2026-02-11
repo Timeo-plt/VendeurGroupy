@@ -5,8 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VendeurGroupy.Views.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
+             d:DesignHeight="450" d:DesignWidth="750" Background="AliceBlue">
     <Grid>
-        <TextBlock Text="la liste des clients est ici" />
+        <ListView>
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Height" Value="40"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Prenom" Width="120" DisplayMemberBinding="{Binding prenom}" />
+                    <GridViewColumn Header="Nom" Width="120" DisplayMemberBinding="{Binding nom}" />
+                    <GridViewColumn Header="Phone" Width="120" DisplayMemberBinding="{Binding phone}" />
+                    <GridViewColumn Header="Email" Width="180" DisplayMemberBinding="{Binding email}" />
+                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding adresse}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

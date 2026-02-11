@@ -8,17 +8,17 @@ namespace VendeurGroupy.Data
 {
     class GroupyContext : DbContext
     {
-        DbSet<Categories> Categories { get; set; }
-        DbSet<NoteInternes> NoteInternes { get; set; }
-        DbSet<Preventes> Preventes { get; set; }
-        DbSet<Signalements> Signalements { get; set; }
-        DbSet<Clients> Clients { get; set; }
-        DbSet<Produits> Produits { get; set; }
-        DbSet<Vendeurs> Vendeurs { get; set; }
-        DbSet<MouvementStocks> MouvementStocks { get; set; }
-        DbSet<Expeditions> Expeditions { get; set; }
-        DbSet<Categories> Categorie { get; set; }
-        DbSet<Stocks> Stocks { get; set; }
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<NoteInternes> NoteInternes { get; set; }
+        public DbSet<Preventes> Preventes { get; set; }
+        public DbSet<Signalements> Signalements { get; set; }
+        public DbSet<Clients> Clients { get; set; }
+        public DbSet<Produits> Produits { get; set; }
+        public DbSet<Vendeurs> Vendeurs { get; set; }
+        public DbSet<MouvementStocks> MouvementStocks { get; set; }
+        public DbSet<Expeditions> Expeditions { get; set; }
+        public DbSet<Categories> Categorie { get; set; }
+        public DbSet<Stocks> Stocks { get; set; }
         public DbSet<Utilisateurs> Utilisateurs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

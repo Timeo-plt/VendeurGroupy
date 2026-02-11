@@ -46,10 +46,6 @@ namespace VendeurGroupy.ViewModels
                 }
             }
         }
-        public void test()
-        {
-            Trace.WriteLine("in test");
-        }
 
     }
 }

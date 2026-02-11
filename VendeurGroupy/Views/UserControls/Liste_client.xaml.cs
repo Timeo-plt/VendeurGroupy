@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VendeurGroupy.ViewModels;
 
 namespace VendeurGroupy.Views.UserControls
 {
@@ -18,9 +19,12 @@ namespace VendeurGroupy.Views.UserControls
     /// </summary>
     public partial class Liste_client : UserControl
     {
+        ClientViewModel cvm;
         public Liste_client()
         {
             InitializeComponent();
+            cvm = new ClientViewModel();
+            cvm.GetClients();
         }
     }
 }

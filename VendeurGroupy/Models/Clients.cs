@@ -15,7 +15,7 @@ namespace VendeurGroupy.Models
         public int Id_user { get; set; }
 
         [Column("nom")]
-        public string Nom { get; set; }
+        public string nom { get; set; }
 
         [Column("prenom")]
         public string prenom { get; set; }

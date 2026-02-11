@@ -5,40 +5,37 @@ using VendeurGroupy.Data;
 using VendeurGroupy.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
-using VendeurGroupy.Views.UserControls;
-
 
 namespace VendeurGroupy.ViewModels
 {
-    class VendeursViewModel
+    internal class ClientViewModel
     {
         public readonly GroupyContext _context;
-
-        public VendeursViewModel()
+        public ClientViewModel()
         {
             _context = new GroupyContext();
         }
 
-        public List<Vendeurs> GetVendeurs()
+        public List<Clients> GetClients()
         {
             try
             {
-                var ListeVendeur = _context.Vendeurs.ToList();
-                if (ListeVendeur != null)
+                var ListeClient = _context.Clients.ToList();
+                if (ListeClient != null)
                 {
-                    return ListeVendeur;
+                    return ListeClient;
                 }
                 else
                 {
-                    return new List<Vendeurs>();
+                    return new List<Clients>();
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error fetching vendeurs: {ex.Message}");
+                Console.WriteLine($"Error fetching clients: {ex.Message}");
                 Console.WriteLine(ex.Message);
-                return new List<Vendeurs>();
+                return new List<Clients>();
             }
         }
     }
-}
+}   
