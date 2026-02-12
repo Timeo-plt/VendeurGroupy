@@ -7,23 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="750" Background="AliceBlue">
     <Grid>
-        <ListView>
-            <ListView.Resources>
-                <Style TargetType="GridViewColumnHeader">
-                    <Setter Property="FontSize" Value="15"/>
-                    <Setter Property="Padding" Value="5"/>
-                    <Setter Property="Height" Value="40"/>
-                </Style>
-            </ListView.Resources>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Prenom" Width="120" DisplayMemberBinding="{Binding prenom}" />
-                    <GridViewColumn Header="Nom" Width="120" DisplayMemberBinding="{Binding nom}" />
-                    <GridViewColumn Header="Phone" Width="120" DisplayMemberBinding="{Binding phone}" />
-                    <GridViewColumn Header="Email" Width="180" DisplayMemberBinding="{Binding email}" />
-                    <GridViewColumn Header="Adresse" Width="200" DisplayMemberBinding="{Binding adresse}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid x:Name="Clients" ItemsSource="{Binding Clients}" AutoGenerateColumns="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id_user}" Width="Auto"/>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Utilisateur.Nom}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Utilisateur.email}" Width="*"/>
+                <DataGridTextColumn Header="Téléphone" Binding="{Binding Utilisateur.phone}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

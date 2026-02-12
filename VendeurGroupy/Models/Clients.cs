@@ -14,26 +14,7 @@ namespace VendeurGroupy.Models
         [Column("id_user")]
         public int Id_user { get; set; }
 
-        [Column("nom")]
-        public string nom { get; set; }
-
-        [Column("prenom")]
-        public string prenom { get; set; }
-
-        [Column("adresse")]
-        public string adresse { get; set; }
-
-        [Column("phone")]
-        public string phone { get; set; }
-
-        [Column("email")]
-        public string email { get; set; }
-        [Column("motdepasse")]
-        public string motdepasse { get; set; }
-
-        [Column("created_at")]
-        public DateTime created_at { get; set; }
-        [Column("updated_at")]
-        public DateTime updated_at { get; set; }
+        [ForeignKey("Id_user")] 
+        public Utilisateurs Utilisateur { get; set; }
     }
 }

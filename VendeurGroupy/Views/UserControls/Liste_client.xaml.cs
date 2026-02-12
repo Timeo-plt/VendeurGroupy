@@ -25,6 +25,8 @@ namespace VendeurGroupy.Views.UserControls
             InitializeComponent();
             cvm = new ClientViewModel();
             cvm.GetClients();
+            DataContext = cvm;
         }
+
     }
 }

@@ -5,30 +5,37 @@ using VendeurGroupy.Data;
 using VendeurGroupy.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using VendeurGroupy.Views.UserControls;
+using System.Collections.ObjectModel;
 
 namespace VendeurGroupy.ViewModels
 {
     internal class ClientViewModel
     {
         public readonly GroupyContext _context;
+        public ObservableCollection<Clients> Clients { get; set; }
         public ClientViewModel()
         {
             _context = new GroupyContext();
+            àClients = new ObservableCollection<Clients>(GetClients());
         }
 
         public List<Clients> GetClients()
         {
             try
             {
-                var ListeClient = _context.Clients.ToList();
-                if (ListeClient != null)
-                {
-                    return ListeClient;
-                }
-                else
-                {
-                    return new List<Clients>();
-                }
+                Clients = new ObservableCollection<Clients>(
+                    _context.Clients.Include(c => c.Utilisateur).ToList());
+
+                return Clients.ToList();
+                //if (Clients != null)
+                //{
+                //    return Clients;
+                //}
+                //else
+                //{
+                //    return new List<Clients>();
+                //}
             }
             catch (Exception ex)
             {
